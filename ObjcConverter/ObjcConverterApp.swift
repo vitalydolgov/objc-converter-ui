@@ -9,9 +9,16 @@ import SwiftUI
 
 @main
 struct ObjcConverterApp: App {
+    
+    init() {
+        x_caml_startup()
+    }
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .navigationTitle("Objective-C Converter")
         }
+        .windowResizability(.contentSize)
     }
 }

@@ -7,19 +7,47 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F102875F2B23AA0700EF6262 /* SwiftUIIntrospect in Frameworks */ = {isa = PBXBuildFile; productRef = F102875E2B23AA0700EF6262 /* SwiftUIIntrospect */; };
+		F10287612B23E4D800EF6262 /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10287602B23E4D800EF6262 /* ContentViewModel.swift */; };
+		F10287622B23E90100EF6262 /* libobjcconv.so in Frameworks */ = {isa = PBXBuildFile; fileRef = F1FA5E2D2B11FB110082AB71 /* libobjcconv.so */; };
+		F10287632B23E90100EF6262 /* libobjcconv.so in Embed Libraries */ = {isa = PBXBuildFile; fileRef = F1FA5E2D2B11FB110082AB71 /* libobjcconv.so */; };
 		F108FBA32B11431D00DF0E9C /* ObjcConverterApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F108FBA22B11431D00DF0E9C /* ObjcConverterApp.swift */; };
 		F108FBA52B11431D00DF0E9C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F108FBA42B11431D00DF0E9C /* ContentView.swift */; };
 		F108FBA72B11431E00DF0E9C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F108FBA62B11431E00DF0E9C /* Assets.xcassets */; };
 		F108FBAA2B11431E00DF0E9C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F108FBA92B11431E00DF0E9C /* Preview Assets.xcassets */; };
+		F108FBB42B1143BD00DF0E9C /* adapter.c in Sources */ = {isa = PBXBuildFile; fileRef = F108FBB32B1143BD00DF0E9C /* adapter.c */; };
+		F108FBC02B116D8700DF0E9C /* Converter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F108FBBF2B116D8700DF0E9C /* Converter.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		F10287642B23E90100EF6262 /* Embed Libraries */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				F10287632B23E90100EF6262 /* libobjcconv.so in Embed Libraries */,
+			);
+			name = "Embed Libraries";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		F108FB9F2B11431D00DF0E9C /* ObjcConverter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ObjcConverter.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F10287602B23E4D800EF6262 /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
+		F108FB9F2B11431D00DF0E9C /* ObjC Converter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ObjC Converter.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F108FBA22B11431D00DF0E9C /* ObjcConverterApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjcConverterApp.swift; sourceTree = "<group>"; };
 		F108FBA42B11431D00DF0E9C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		F108FBA62B11431E00DF0E9C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F108FBA92B11431E00DF0E9C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F108FBAB2B11431E00DF0E9C /* ObjcConverter.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ObjcConverter.entitlements; sourceTree = "<group>"; };
+		F108FBB12B1143BC00DF0E9C /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
+		F108FBB22B1143BD00DF0E9C /* adapter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = adapter.h; sourceTree = "<group>"; };
+		F108FBB32B1143BD00DF0E9C /* adapter.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = adapter.c; sourceTree = "<group>"; };
+		F108FBB62B11478600DF0E9C /* libobcjconv.so */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libobcjconv.so; path = "../../.opam/default/lib/objc-converter/libobcjconv.so"; sourceTree = "<group>"; };
+		F108FBBF2B116D8700DF0E9C /* Converter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Converter.swift; sourceTree = "<group>"; };
+		F1FA5E2B2B11F5600082AB71 /* libobcjconv.exe.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; name = libobcjconv.exe.o; path = ../objc_converter/_build/default/libobjcconv/libobcjconv.exe.o; sourceTree = "<group>"; };
+		F1FA5E2D2B11FB110082AB71 /* libobjcconv.so */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libobjcconv.so; path = ../objc_converter/_build/default/libobjcconv/libobjcconv.so; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -27,6 +55,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F102875F2B23AA0700EF6262 /* SwiftUIIntrospect in Frameworks */,
+				F10287622B23E90100EF6262 /* libobjcconv.so in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -38,13 +68,14 @@
 			children = (
 				F108FBA12B11431D00DF0E9C /* ObjcConverter */,
 				F108FBA02B11431D00DF0E9C /* Products */,
+				F108FBB52B11478500DF0E9C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
 		F108FBA02B11431D00DF0E9C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				F108FB9F2B11431D00DF0E9C /* ObjcConverter.app */,
+				F108FB9F2B11431D00DF0E9C /* ObjC Converter.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -52,11 +83,14 @@
 		F108FBA12B11431D00DF0E9C /* ObjcConverter */ = {
 			isa = PBXGroup;
 			children = (
+				F108FBBE2B116D6500DF0E9C /* Converter */,
 				F108FBA22B11431D00DF0E9C /* ObjcConverterApp.swift */,
 				F108FBA42B11431D00DF0E9C /* ContentView.swift */,
+				F10287602B23E4D800EF6262 /* ContentViewModel.swift */,
 				F108FBA62B11431E00DF0E9C /* Assets.xcassets */,
 				F108FBAB2B11431E00DF0E9C /* ObjcConverter.entitlements */,
 				F108FBA82B11431E00DF0E9C /* Preview Content */,
+				F108FBB12B1143BC00DF0E9C /* Bridging-Header.h */,
 			);
 			path = ObjcConverter;
 			sourceTree = "<group>";
@@ -69,24 +103,48 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		F108FBB52B11478500DF0E9C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F1FA5E2D2B11FB110082AB71 /* libobjcconv.so */,
+				F1FA5E2B2B11F5600082AB71 /* libobcjconv.exe.o */,
+				F108FBB62B11478600DF0E9C /* libobcjconv.so */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F108FBBE2B116D6500DF0E9C /* Converter */ = {
+			isa = PBXGroup;
+			children = (
+				F108FBB22B1143BD00DF0E9C /* adapter.h */,
+				F108FBB32B1143BD00DF0E9C /* adapter.c */,
+				F108FBBF2B116D8700DF0E9C /* Converter.swift */,
+			);
+			path = Converter;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		F108FB9E2B11431D00DF0E9C /* ObjcConverter */ = {
+		F108FB9E2B11431D00DF0E9C /* ObjC Converter */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F108FBAE2B11431E00DF0E9C /* Build configuration list for PBXNativeTarget "ObjcConverter" */;
+			buildConfigurationList = F108FBAE2B11431E00DF0E9C /* Build configuration list for PBXNativeTarget "ObjC Converter" */;
 			buildPhases = (
 				F108FB9B2B11431D00DF0E9C /* Sources */,
 				F108FB9C2B11431D00DF0E9C /* Frameworks */,
 				F108FB9D2B11431D00DF0E9C /* Resources */,
+				F10287642B23E90100EF6262 /* Embed Libraries */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = ObjcConverter;
+			name = "ObjC Converter";
+			packageProductDependencies = (
+				F102875E2B23AA0700EF6262 /* SwiftUIIntrospect */,
+			);
 			productName = ObjcConverter;
-			productReference = F108FB9F2B11431D00DF0E9C /* ObjcConverter.app */;
+			productReference = F108FB9F2B11431D00DF0E9C /* ObjC Converter.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -101,6 +159,7 @@
 				TargetAttributes = {
 					F108FB9E2B11431D00DF0E9C = {
 						CreatedOnToolsVersion = 15.0.1;
+						LastSwiftMigration = 1500;
 					};
 				};
 			};
@@ -113,11 +172,14 @@
 				Base,
 			);
 			mainGroup = F108FB962B11431D00DF0E9C;
+			packageReferences = (
+				F102875D2B23AA0700EF6262 /* XCRemoteSwiftPackageReference "swiftui-introspect" */,
+			);
 			productRefGroup = F108FBA02B11431D00DF0E9C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				F108FB9E2B11431D00DF0E9C /* ObjcConverter */,
+				F108FB9E2B11431D00DF0E9C /* ObjC Converter */,
 			);
 		};
 /* End PBXProject section */
@@ -139,8 +201,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F108FBB42B1143BD00DF0E9C /* adapter.c in Sources */,
 				F108FBA52B11431D00DF0E9C /* ContentView.swift in Sources */,
+				F108FBC02B116D8700DF0E9C /* Converter.swift in Sources */,
 				F108FBA32B11431D00DF0E9C /* ObjcConverterApp.swift in Sources */,
+				F10287612B23E4D800EF6262 /* ContentViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,13 +333,17 @@
 		F108FBAF2B11431E00DF0E9C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = arm64;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = ObjcConverter/ObjcConverter.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ObjcConverter/Preview Content\"";
+				DEVELOPMENT_TEAM = 6LKU4RTSKK;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
@@ -282,10 +351,14 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.github.vitalydolgov.ObjcConverter;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 0.1;
+				OTHER_CFLAGS = "-I$HOME/.opam/default/lib/ocaml";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.github.vitalydolgov.objc-converter";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "ObjcConverter/Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -293,13 +366,17 @@
 		F108FBB02B11431E00DF0E9C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = arm64;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = ObjcConverter/ObjcConverter.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ObjcConverter/Preview Content\"";
+				DEVELOPMENT_TEAM = 6LKU4RTSKK;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
@@ -307,10 +384,13 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.github.vitalydolgov.ObjcConverter;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 0.1;
+				OTHER_CFLAGS = "-I$HOME/.opam/default/lib/ocaml";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.github.vitalydolgov.objc-converter";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "ObjcConverter/Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
@@ -327,7 +407,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F108FBAE2B11431E00DF0E9C /* Build configuration list for PBXNativeTarget "ObjcConverter" */ = {
+		F108FBAE2B11431E00DF0E9C /* Build configuration list for PBXNativeTarget "ObjC Converter" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F108FBAF2B11431E00DF0E9C /* Debug */,
@@ -337,6 +417,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F102875D2B23AA0700EF6262 /* XCRemoteSwiftPackageReference "swiftui-introspect" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/siteline/swiftui-introspect";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.1.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F102875E2B23AA0700EF6262 /* SwiftUIIntrospect */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F102875D2B23AA0700EF6262 /* XCRemoteSwiftPackageReference "swiftui-introspect" */;
+			productName = SwiftUIIntrospect;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = F108FB972B11431D00DF0E9C /* Project object */;
 }
