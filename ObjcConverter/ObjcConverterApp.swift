@@ -9,16 +9,32 @@ import SwiftUI
 
 @main
 struct ObjcConverterApp: App {
+    @StateObject var dataController = DataController()
     
     init() {
         x_caml_startup()
     }
     
     var body: some Scene {
-        WindowGroup {
+        Window("Objective-C Converter", id: "main") {
             ContentView()
-                .navigationTitle("Objective-C Converter")
         }
-        .windowResizability(.contentSize)
+        
+        Window("Substitutions", id: "substitutions") {
+            SubstitutionView()
+                .environment(\.managedObjectContext, dataController.container.viewContext)
+        }
+    }
+}
+
+class DataController: ObservableObject {
+    let container = NSPersistentContainer(name: "DataModel")
+    
+    init() {
+        container.loadPersistentStores { description, error in
+            if error != nil {
+                fatalError()
+            }
+        }
     }
 }

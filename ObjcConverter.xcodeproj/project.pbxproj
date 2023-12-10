@@ -17,6 +17,9 @@
 		F108FBAA2B11431E00DF0E9C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F108FBA92B11431E00DF0E9C /* Preview Assets.xcassets */; };
 		F108FBB42B1143BD00DF0E9C /* adapter.c in Sources */ = {isa = PBXBuildFile; fileRef = F108FBB32B1143BD00DF0E9C /* adapter.c */; };
 		F108FBC02B116D8700DF0E9C /* Converter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F108FBBF2B116D8700DF0E9C /* Converter.swift */; };
+		F17772752B24D8FE004E5F1A /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F17772732B24D8FE004E5F1A /* DataModel.xcdatamodeld */; };
+		F17772772B250160004E5F1A /* SubstitutionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17772762B250160004E5F1A /* SubstitutionView.swift */; };
+		F1A9E3F72B25F58100130D8D /* Exception.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A9E3F62B25F58100130D8D /* Exception.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -46,6 +49,9 @@
 		F108FBB32B1143BD00DF0E9C /* adapter.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = adapter.c; sourceTree = "<group>"; };
 		F108FBB62B11478600DF0E9C /* libobcjconv.so */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libobcjconv.so; path = "../../.opam/default/lib/objc-converter/libobcjconv.so"; sourceTree = "<group>"; };
 		F108FBBF2B116D8700DF0E9C /* Converter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Converter.swift; sourceTree = "<group>"; };
+		F17772742B24D8FE004E5F1A /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
+		F17772762B250160004E5F1A /* SubstitutionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubstitutionView.swift; sourceTree = "<group>"; };
+		F1A9E3F62B25F58100130D8D /* Exception.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exception.swift; sourceTree = "<group>"; };
 		F1FA5E2B2B11F5600082AB71 /* libobcjconv.exe.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; name = libobcjconv.exe.o; path = ../objc_converter/_build/default/libobjcconv/libobcjconv.exe.o; sourceTree = "<group>"; };
 		F1FA5E2D2B11FB110082AB71 /* libobjcconv.so */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libobjcconv.so; path = ../objc_converter/_build/default/libobjcconv/libobjcconv.so; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -83,14 +89,14 @@
 		F108FBA12B11431D00DF0E9C /* ObjcConverter */ = {
 			isa = PBXGroup;
 			children = (
+				F17772782B250172004E5F1A /* Views */,
 				F108FBBE2B116D6500DF0E9C /* Converter */,
 				F108FBA22B11431D00DF0E9C /* ObjcConverterApp.swift */,
-				F108FBA42B11431D00DF0E9C /* ContentView.swift */,
-				F10287602B23E4D800EF6262 /* ContentViewModel.swift */,
 				F108FBA62B11431E00DF0E9C /* Assets.xcassets */,
 				F108FBAB2B11431E00DF0E9C /* ObjcConverter.entitlements */,
 				F108FBA82B11431E00DF0E9C /* Preview Content */,
 				F108FBB12B1143BC00DF0E9C /* Bridging-Header.h */,
+				F17772732B24D8FE004E5F1A /* DataModel.xcdatamodeld */,
 			);
 			path = ObjcConverter;
 			sourceTree = "<group>";
@@ -119,8 +125,19 @@
 				F108FBB22B1143BD00DF0E9C /* adapter.h */,
 				F108FBB32B1143BD00DF0E9C /* adapter.c */,
 				F108FBBF2B116D8700DF0E9C /* Converter.swift */,
+				F1A9E3F62B25F58100130D8D /* Exception.swift */,
 			);
 			path = Converter;
+			sourceTree = "<group>";
+		};
+		F17772782B250172004E5F1A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F108FBA42B11431D00DF0E9C /* ContentView.swift */,
+				F10287602B23E4D800EF6262 /* ContentViewModel.swift */,
+				F17772762B250160004E5F1A /* SubstitutionView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -201,9 +218,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F17772772B250160004E5F1A /* SubstitutionView.swift in Sources */,
+				F1A9E3F72B25F58100130D8D /* Exception.swift in Sources */,
 				F108FBB42B1143BD00DF0E9C /* adapter.c in Sources */,
 				F108FBA52B11431D00DF0E9C /* ContentView.swift in Sources */,
 				F108FBC02B116D8700DF0E9C /* Converter.swift in Sources */,
+				F17772752B24D8FE004E5F1A /* DataModel.xcdatamodeld in Sources */,
 				F108FBA32B11431D00DF0E9C /* ObjcConverterApp.swift in Sources */,
 				F10287612B23E4D800EF6262 /* ContentViewModel.swift in Sources */,
 			);
@@ -436,6 +456,19 @@
 			productName = SwiftUIIntrospect;
 		};
 /* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		F17772732B24D8FE004E5F1A /* DataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				F17772742B24D8FE004E5F1A /* DataModel.xcdatamodel */,
+			);
+			currentVersion = F17772742B24D8FE004E5F1A /* DataModel.xcdatamodel */;
+			path = DataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = F108FB972B11431D00DF0E9C /* Project object */;
 }

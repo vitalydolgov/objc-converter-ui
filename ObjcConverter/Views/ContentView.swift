@@ -10,7 +10,7 @@ import SwiftUIIntrospect
 
 struct ContentView: View {
     @ObservedObject var viewModel = ContentViewModel()
-    
+
     let cursorPublisher = NotificationCenter.default
         .publisher(for: NSTextView.didChangeSelectionNotification)
     
@@ -44,6 +44,7 @@ struct ContentView: View {
 }
 
 struct LeftToolbarView: View {
+    @Environment(\.openWindow) var openWindow
     @ObservedObject var viewModel: ContentViewModel
 
     var body: some View {
@@ -57,6 +58,13 @@ struct LeftToolbarView: View {
             .tint(.orange)
             .fontWeight(.semibold)
             .keyboardShortcut("s")
+            
+            Button {
+                openWindow(id: "substitutions")
+            } label: {
+                Text("Substitutions")
+            }
+            .buttonStyle(.bordered)
             
             Spacer()
             
@@ -83,9 +91,7 @@ struct RightToolbarView: View {
             } label: {
                 Text("Copy")
             }
-            .buttonStyle(.borderedProminent)
-            .tint(.gray)
-            .fontWeight(.semibold)
+            .buttonStyle(.bordered)
             .disabled(isCopyDisabled)
         }
     }
