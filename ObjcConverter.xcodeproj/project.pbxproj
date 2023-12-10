@@ -20,6 +20,8 @@
 		F17772752B24D8FE004E5F1A /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F17772732B24D8FE004E5F1A /* DataModel.xcdatamodeld */; };
 		F17772772B250160004E5F1A /* SubstitutionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17772762B250160004E5F1A /* SubstitutionView.swift */; };
 		F1A9E3F72B25F58100130D8D /* Exception.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A9E3F62B25F58100130D8D /* Exception.swift */; };
+		F1A9E3FA2B26598F00130D8D /* BindingKit in Frameworks */ = {isa = PBXBuildFile; productRef = F1A9E3F92B26598F00130D8D /* BindingKit */; };
+		F1A9E3FC2B26667200130D8D /* SubstitutionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A9E3FB2B26667200130D8D /* SubstitutionData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -52,6 +54,7 @@
 		F17772742B24D8FE004E5F1A /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
 		F17772762B250160004E5F1A /* SubstitutionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubstitutionView.swift; sourceTree = "<group>"; };
 		F1A9E3F62B25F58100130D8D /* Exception.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exception.swift; sourceTree = "<group>"; };
+		F1A9E3FB2B26667200130D8D /* SubstitutionData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubstitutionData.swift; sourceTree = "<group>"; };
 		F1FA5E2B2B11F5600082AB71 /* libobcjconv.exe.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; name = libobcjconv.exe.o; path = ../objc_converter/_build/default/libobjcconv/libobcjconv.exe.o; sourceTree = "<group>"; };
 		F1FA5E2D2B11FB110082AB71 /* libobjcconv.so */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libobjcconv.so; path = ../objc_converter/_build/default/libobjcconv/libobjcconv.so; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -62,6 +65,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F102875F2B23AA0700EF6262 /* SwiftUIIntrospect in Frameworks */,
+				F1A9E3FA2B26598F00130D8D /* BindingKit in Frameworks */,
 				F10287622B23E90100EF6262 /* libobjcconv.so in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -91,12 +95,12 @@
 			children = (
 				F17772782B250172004E5F1A /* Views */,
 				F108FBBE2B116D6500DF0E9C /* Converter */,
-				F108FBA22B11431D00DF0E9C /* ObjcConverterApp.swift */,
 				F108FBA62B11431E00DF0E9C /* Assets.xcassets */,
 				F108FBAB2B11431E00DF0E9C /* ObjcConverter.entitlements */,
 				F108FBA82B11431E00DF0E9C /* Preview Content */,
 				F108FBB12B1143BC00DF0E9C /* Bridging-Header.h */,
 				F17772732B24D8FE004E5F1A /* DataModel.xcdatamodeld */,
+				F1A9E3F62B25F58100130D8D /* Exception.swift */,
 			);
 			path = ObjcConverter;
 			sourceTree = "<group>";
@@ -125,7 +129,6 @@
 				F108FBB22B1143BD00DF0E9C /* adapter.h */,
 				F108FBB32B1143BD00DF0E9C /* adapter.c */,
 				F108FBBF2B116D8700DF0E9C /* Converter.swift */,
-				F1A9E3F62B25F58100130D8D /* Exception.swift */,
 			);
 			path = Converter;
 			sourceTree = "<group>";
@@ -133,6 +136,8 @@
 		F17772782B250172004E5F1A /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				F108FBA22B11431D00DF0E9C /* ObjcConverterApp.swift */,
+				F1A9E3FB2B26667200130D8D /* SubstitutionData.swift */,
 				F108FBA42B11431D00DF0E9C /* ContentView.swift */,
 				F10287602B23E4D800EF6262 /* ContentViewModel.swift */,
 				F17772762B250160004E5F1A /* SubstitutionView.swift */,
@@ -159,6 +164,7 @@
 			name = "ObjC Converter";
 			packageProductDependencies = (
 				F102875E2B23AA0700EF6262 /* SwiftUIIntrospect */,
+				F1A9E3F92B26598F00130D8D /* BindingKit */,
 			);
 			productName = ObjcConverter;
 			productReference = F108FB9F2B11431D00DF0E9C /* ObjC Converter.app */;
@@ -191,6 +197,7 @@
 			mainGroup = F108FB962B11431D00DF0E9C;
 			packageReferences = (
 				F102875D2B23AA0700EF6262 /* XCRemoteSwiftPackageReference "swiftui-introspect" */,
+				F1A9E3F82B26598F00130D8D /* XCRemoteSwiftPackageReference "BindingKit" */,
 			);
 			productRefGroup = F108FBA02B11431D00DF0E9C /* Products */;
 			projectDirPath = "";
@@ -226,6 +233,7 @@
 				F17772752B24D8FE004E5F1A /* DataModel.xcdatamodeld in Sources */,
 				F108FBA32B11431D00DF0E9C /* ObjcConverterApp.swift in Sources */,
 				F10287612B23E4D800EF6262 /* ContentViewModel.swift in Sources */,
+				F1A9E3FC2B26667200130D8D /* SubstitutionData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -447,6 +455,14 @@
 				minimumVersion = 1.1.1;
 			};
 		};
+		F1A9E3F82B26598F00130D8D /* XCRemoteSwiftPackageReference "BindingKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/mkj-is/BindingKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -454,6 +470,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = F102875D2B23AA0700EF6262 /* XCRemoteSwiftPackageReference "swiftui-introspect" */;
 			productName = SwiftUIIntrospect;
+		};
+		F1A9E3F92B26598F00130D8D /* BindingKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F1A9E3F82B26598F00130D8D /* XCRemoteSwiftPackageReference "BindingKit" */;
+			productName = BindingKit;
 		};
 /* End XCSwiftPackageProductDependency section */
 

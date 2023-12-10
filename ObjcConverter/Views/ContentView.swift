@@ -9,11 +9,11 @@ import SwiftUI
 import SwiftUIIntrospect
 
 struct ContentView: View {
-    @ObservedObject var viewModel = ContentViewModel()
+    @ObservedObject var viewModel: ContentViewModel
 
     let cursorPublisher = NotificationCenter.default
         .publisher(for: NSTextView.didChangeSelectionNotification)
-    
+        
     var body: some View {
         VStack(spacing: 8) {
             HStack(spacing: 3) {

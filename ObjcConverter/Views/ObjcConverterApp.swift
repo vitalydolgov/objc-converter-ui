@@ -17,18 +17,19 @@ struct ObjcConverterApp: App {
     
     var body: some Scene {
         Window("Objective-C Converter", id: "main") {
-            ContentView()
+            let viewModel = ContentViewModel(substitutionData: dataController.substitutionData)
+            ContentView(viewModel: viewModel)
         }
         
         Window("Substitutions", id: "substitutions") {
-            SubstitutionView()
-                .environment(\.managedObjectContext, dataController.container.viewContext)
+            SubstitutionView(data: dataController.substitutionData)
         }
     }
 }
 
 class DataController: ObservableObject {
     let container = NSPersistentContainer(name: "DataModel")
+    let substitutionData: SubstitutionData
     
     init() {
         container.loadPersistentStores { description, error in
@@ -36,5 +37,6 @@ class DataController: ObservableObject {
                 fatalError()
             }
         }
+        substitutionData = SubstitutionData(managedContext: container.viewContext)
     }
 }

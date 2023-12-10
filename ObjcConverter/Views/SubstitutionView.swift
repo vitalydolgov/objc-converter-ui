@@ -6,103 +6,61 @@
 //
 
 import SwiftUI
-
-struct SubstitutionItem: View {
-    @State private var inputRegex: String
-    @State private var inputOrder: String
-    @State private var inputDisabled: Bool
-    @Environment(\.managedObjectContext) var dataContext
-    @ObservedObject var substitution: Substitution
-    
-    init(substitution: Substitution) {
-        self.inputRegex = substitution.regex ?? ""
-        self.inputOrder = String(substitution.order)
-        self.inputDisabled = substitution.disabled
-        self.substitution = substitution
-    }
-    
-    var body: some View {
-        HStack(spacing: 16) {
-            TextField("", text: $inputOrder) {
-                substitution.order = Int16(inputOrder) ?? 0
-                try? dataContext.save()
-            }
-            .multilineTextAlignment(.trailing)
-            .frame(maxWidth: 30)
-            
-            TextField("", text: $inputRegex) {
-                substitution.regex = inputRegex
-                try? dataContext.save()
-            }
-            
-            Spacer()
-            
-            Toggle(isOn: $inputDisabled, label: {
-                
-            })
-            .onChange(of: inputDisabled) { oldValue, newValue in
-                substitution.disabled = newValue
-                try? dataContext.save()
-            }
-        }
-        .fontDesign(.monospaced)
-    }
-}
+import BindingKit
 
 struct SubstitutionView: View {
-    @State private var selectedItem: Substitution?
-    @Environment(\.managedObjectContext) var dataContext
-    
-    @FetchRequest(sortDescriptors: [
-        NSSortDescriptor(keyPath: \Substitution.order, ascending: true)
-    ]) var substitutions: FetchedResults<Substitution>
+    @State private var selection = Set<ObjectIdentifier>()
+    @State private var sortOrder: [KeyPathComparator<Substitution>] = [.init(\.order)]
+    @FocusState var orderInputIsFocused: Bool
+    @ObservedObject var data: SubstitutionData
     
     var body: some View {
         VStack(spacing: 8) {
-            
-            HStack(spacing: 16) {
-                Text("#")
-                    .frame(minWidth: 30)
+            Table(data.substitutions, selection: $selection, sortOrder: $sortOrder) {
+                TableColumn("#") { row in
+                    TextField("", value: $data[row.id].order, format: .number)
+                        .multilineTextAlignment(.trailing)
+                        .onChange(of: orderInputIsFocused) {
+                            if !orderInputIsFocused {
+                                data.reload()
+                            }
+                        }
+                        .focused($orderInputIsFocused)
+                }
+                .alignment(.numeric)
                 
-                Text("Regular expression")
-                
-                Spacer()
-                
-                Text("Disable")
+                TableColumn("Regular expression") { row in
+                    TextField("", text: $data[row.id].regex ?? "")
+                        .fontDesign(.monospaced)
+                }
+                .width(ideal: 200)
+
+                TableColumn("Disabled") { row in
+                    Toggle("", isOn: $data[row.id].disabled)
+                }
+                .alignment(.center)
             }
-            .fontWeight(.semibold)
-            .padding(.horizontal)
-            
-            List(substitutions, id: \.self, selection: $selectedItem) { substitution in
-                SubstitutionItem(substitution: substitution)
-            }
+            .environment(\.defaultMinListRowHeight, 28)
             
             HStack {
                 Button {
-                    let substitution = Substitution(context: dataContext)
-                    substitution.regex = "/<regex>/<replac>/"
-                    try? dataContext.save()
+                    data.addNew()
                 } label: {
                     Image(systemName: "plus")
                 }
                 
                 Button {
-                    guard let selectedItem else {
-                        return
-                    }
-                    dataContext.delete(selectedItem)
-                    if let _ = try? dataContext.save() {
-                        self.selectedItem = nil
-                    }
+                    data.remove(with: selection)
+                    selection = Set()
                 } label: {
                     Image(systemName: "minus")
                 }
-                .disabled(selectedItem == nil)
+                .disabled(selection.isEmpty)
                 
                 Spacer()
             }
             .padding(.horizontal)
         }
-        .padding(.vertical)
+        .padding(.bottom)
     }
 }

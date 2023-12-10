@@ -19,6 +19,11 @@ class ContentViewModel: ObservableObject, ContentViewModelPr {
     @Published var input = ""
     @Published var output = ""
     var introspectTextView: NSTextView?
+    var substitutionData: SubstitutionDataPr
+    
+    init(substitutionData: SubstitutionDataPr) {
+        self.substitutionData = substitutionData
+    }
     
     func updateCursorPosition() {
         currentPosition = (getCurrentLine(), getCurrentColumn())
@@ -31,19 +36,8 @@ class ContentViewModel: ObservableObject, ContentViewModelPr {
     }
     
     private func getPatterns() -> [String] {
-        let container = NSPersistentContainer(name: "DataModel")
-        container.loadPersistentStores { description, error in
-            if let _ = error {
-                fatalError()
-            }
-        }
-        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Substitution")
-        request.sortDescriptors = [NSSortDescriptor(key: "order", ascending: true)]
-        let records = try? container.viewContext.fetch(request)
-        guard let substitutions  = records as? [Substitution] else {
-            return []
-        }
-        return substitutions.filter { !$0.disabled }.compactMap { $0.regex }
+        substitutionData.substitutions
+            .filter { !$0.disabled }.compactMap { $0.regex }
     }
     
     var cursorPositionString: String {
